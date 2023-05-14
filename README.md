@@ -31,7 +31,7 @@ This is a section of the Cyfrin Foundry Solidity Course.
 ## Quickstart
 
 ```
-git clone https://github.com/PatrickAlphaC/foundry-dao-f23
+git clone https://github.com/ChainAccelOrg/foundry-dao-f23
 cd foundry-dao-f23
 forge install
 forge build
