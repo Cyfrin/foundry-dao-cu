@@ -31,6 +31,7 @@ contract MyGovernorTest is Test {
     function setUp() public {
         token = new GovToken();
         token.mint(VOTER, 100e18);
+
         vm.prank(VOTER);
         token.delegate(VOTER);
         timelock = new TimeLock(MIN_DELAY, proposers, executors);
