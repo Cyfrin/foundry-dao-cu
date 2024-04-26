@@ -10,9 +10,6 @@ contract Box is Ownable {
     // Emitted when the stored value changes
     event ValueChanged(uint256 newValue);
 
-    // initial owner of this smart contract is the deployer of this smart contract
-    constructor() Ownable(msg.sender) {}   
-
     // Stores a new value in the contract
     function store(uint256 newValue) public onlyOwner {
         value = newValue;

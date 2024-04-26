@@ -8,6 +8,8 @@ This is a section of the Cyfrin Foundry Solidity Course.
 
 [One of my favorite articles on money-based voting being bad](https://vitalik.ca/general/2018/03/28/plutocracy.html)
 
+> Note: If you install the most recent version of openzeppelin contracts, this codebase won't work! Be sure to install `v4.8.3` of openzeppelin. See the `Makefile` for more information.
+
 - [Foundry DAO Governance](#foundry-dao-governance)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
@@ -35,7 +37,7 @@ This is a section of the Cyfrin Foundry Solidity Course.
 ```
 git clone https://github.com/Cyfrin/foundry-dao-f23
 cd foundry-dao-f23
-forge install
+forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
 forge build
 ```
 
