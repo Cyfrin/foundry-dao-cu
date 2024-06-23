@@ -35,9 +35,9 @@ This is a section of the Cyfrin Foundry Solidity Course.
 ## Quickstart
 
 ```
-git clone https://github.com/Cyfrin/foundry-dao-f23
-cd foundry-dao-f23
-forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
+git clone https://github.com/Cyfrin/foundry-dao-cu
+cd foundry-dao-cu
+forge install
 forge build
 ```
 
