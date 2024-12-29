@@ -15,8 +15,9 @@ contract MyGovernorTest is Test {
 
     uint256 public constant MIN_DELAY = 3600; // 1 hour - after a vote passes, you have 1 hour before you can enact
     uint256 public constant QUORUM_PERCENTAGE = 4; // Need 4% of voters to pass
-    uint256 public constant VOTING_PERIOD = 50400; // This is how long voting lasts
-    uint256 public constant VOTING_DELAY = 1; // How many blocks till a proposal vote becomes active
+    uint32 public constant VOTING_PERIOD = 50400; // This is how long voting lasts
+    uint48 public constant VOTING_DELAY = 1; // How many blocks till a proposal vote becomes active
+    uint256 public constant VOTING_THRESHOLD = 0;
 
     address[] proposers;
     address[] executors;
@@ -34,7 +35,7 @@ contract MyGovernorTest is Test {
         vm.prank(VOTER);
         token.delegate(VOTER);
         timelock = new TimeLock(MIN_DELAY, proposers, executors);
-        governor = new MyGovernor(token, timelock);
+        governor = new MyGovernor(token, timelock,VOTING_DELAY,VOTING_PERIOD,VOTING_THRESHOLD,QUORUM_PERCENTAGE);
         bytes32 proposerRole = timelock.PROPOSER_ROLE();
         bytes32 executorRole = timelock.EXECUTOR_ROLE();
         bytes32 adminRole = timelock.TIMELOCK_ADMIN_ROLE();
