@@ -6,7 +6,7 @@ This is a section of the Cyfrin Foundry Solidity Course.
 
 *Please note: ERC20 based voting is not always recommended, and I encourage you to explore other forms of governance like reputation based or "skin-in-the-game" based.*
 
-[One of my favorite articles on money-based voting being bad](https://vitalik.ca/general/2018/03/28/plutocracy.html)
+[One of my favorite articles on money-based voting being bad](https://vitalik.eth.limo/general/2018/03/28/plutocracy.html)
 
 > Note: If you install the most recent version of openzeppelin contracts, this codebase won't work! Be sure to install `v4.8.3` of openzeppelin. See the `Makefile` for more information.
 
