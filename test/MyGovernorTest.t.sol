@@ -3,13 +3,13 @@ pragma solidity ^0.8.19;
 
 import {Test} from "forge-std/Test.sol";
 import {MyGovernor} from "../src/MyGovernor.sol";
-import {GovToken} from "../src/GovToken.sol";
+import {GovernanceToken} from "../src/GovernanceToken.sol";
 import {TimeLock} from "../src/TimeLock.sol";
 import {Box} from "../src/Box.sol";
 import {console2} from "forge-std/console2.sol";
 
 contract MyGovernorTest is Test {
-    GovToken token;
+    GovernanceToken token;
     TimeLock timelock;
     MyGovernor governor;
     Box box;
@@ -29,7 +29,7 @@ contract MyGovernorTest is Test {
     address public constant VOTER = address(1);
 
     function setUp() public {
-        token = new GovToken();
+        token = new GovernanceToken();
         token.mint(VOTER, 100e18);
 
         vm.prank(VOTER);
@@ -38,7 +38,7 @@ contract MyGovernorTest is Test {
         governor = new MyGovernor(token, timelock);
         bytes32 proposerRole = timelock.PROPOSER_ROLE();
         bytes32 executorRole = timelock.EXECUTOR_ROLE();
-        bytes32 adminRole = timelock.TIMELOCK_ADMIN_ROLE();
+        bytes32 adminRole = timelock.DEFAULT_ADMIN_ROLE();
 
         timelock.grantRole(proposerRole, address(governor));
         timelock.grantRole(executorRole, address(0));
